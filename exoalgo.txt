@@ -1,0 +1,26 @@
+// 1er exercice
+
+int valeurEntiere = 188;
+String maChaine = "Mon premier programme";
+boolean monBooleen = True;
+String monPrix = System.console().readLine();
+String monPrix vers int:
+int monPrixInt = Integer.parseInt(monPrix);
+
+
+// 2eme exercice
+
+int maValeurEntiere = 15;
+System.out.println(maValeurEntiere);
+
+String monString;
+monString = "Hello World!";
+System.out.println(monString);
+
+
+// 3eme exercice
+
+int x, y, z;
+z = x;
+x = y;
+y = z;
