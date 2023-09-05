@@ -1,4 +1,4 @@
-class Main {
+class ScareRectangle {
     public static void main(String[] args){
         double squareL, squareArea, squarePerim, rectangleL, rectangleW, rectangleArea, rectanglePerim;
         System.out.println("Enter the length of the square:");
