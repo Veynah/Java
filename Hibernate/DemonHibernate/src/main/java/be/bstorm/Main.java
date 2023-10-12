@@ -14,6 +14,25 @@ public class Main {
         SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction tx;
+
+        // Créer une instance de Municipality
+        Municipality municipality = new Municipality();
+        municipality.setNom("Charleroi");
+
+        // Créer une instance de Mayor
+        Mayor mayor = new Mayor();
+        mayor.setNom("Magnette");
+
+        mayor.setMunicipality(municipality);
+        municipality.setMayor(mayor);
+
+        tx = session.beginTransaction();
+
+        session.persist(municipality);
+        session.persist(mayor);
+
+        tx.commit();
+
 //
 //        try {
 //            // Créer une instance de Municipality
