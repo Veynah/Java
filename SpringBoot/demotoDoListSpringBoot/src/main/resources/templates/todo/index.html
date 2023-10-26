@@ -13,6 +13,7 @@
         <span th:if="${todo.complete}">[Completed]</span>
         <a th:href="@{/todo/edit/{id}(id=${todo.id})}">Edit</a>
         <a th:href="@{/todo/delete/{id}(id=${todo.id})}">Delete</a>
+        <a th:if="${!todo.complete}" th:href="@{/todo/complete/{id}(id=${todo.id})}">Complete</a>
     </li>
 </ul>
 </body>

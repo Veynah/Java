@@ -10,4 +10,8 @@ public interface ToDoService {
     void create(ToDoItem toDoItem);
     List<ToDoItem> findAll();
     Optional<ToDoItem> findById(Long id);
+
+    void update(Long id, ToDoItem toDoItem);
+    void delete(Long id);
+    void complete(Long id);
 }

@@ -30,5 +30,26 @@ public class ToDoServiceImpl implements ToDoService {
         return toDoRepository.findById(id);
     }
 
-    // Autres méthodes...
+    @Override
+    public void update(Long id, ToDoItem toDoItem) {
+        ToDoItem existingItem = toDoRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid todo ID: " + id));
+        existingItem.setDescription(toDoItem.getDescription());
+        existingItem.setComplete(toDoItem.isComplete());
+        toDoRepository.save(existingItem);
+    }
+
+    @Override
+    public void delete(Long id) {
+        toDoRepository.deleteById(id);
+    }
+
+    @Override
+    public void complete(Long id) {
+        ToDoItem toDoItem = toDoRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid todo ID: " + id));
+        toDoItem.setComplete(true);
+        toDoRepository.save(toDoItem);
+    }
+
 }
