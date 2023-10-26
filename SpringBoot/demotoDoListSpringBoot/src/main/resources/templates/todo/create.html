@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Create Todo</title>
 </head>
 <body>
-
+<h1>Create Todo</h1>
+<form th:action="@{/todo/create}" th:object="${todoItem}" method="post">
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" th:field="*{description}" />
+    <button type="submit">Create</button>
+</form>
 </body>
 </html>

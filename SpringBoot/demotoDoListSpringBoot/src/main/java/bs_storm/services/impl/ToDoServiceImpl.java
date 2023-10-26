@@ -4,8 +4,8 @@ import bs_storm.models.entities.ToDoItem;
 import bs_storm.repositories.ToDoRepository;
 import bs_storm.services.ToDoService;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ToDoServiceImpl implements ToDoService {
@@ -24,4 +24,11 @@ public class ToDoServiceImpl implements ToDoService {
     public List<ToDoItem> findAll() {
         return toDoRepository.findAll();
     }
+
+    @Override
+    public Optional<ToDoItem> findById(Long id) {
+        return toDoRepository.findById(id);
+    }
+
+    // Autres méthodes...
 }
